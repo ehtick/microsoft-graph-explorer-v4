@@ -92,16 +92,6 @@ export class Request extends Component<IRequestComponent, any> {
         <div style={containerStyle}>
           <Permission />
         </div>
-      </PivotItem>,
-      <PivotItem
-        key='feedback'
-        itemIcon='HeartFill'
-        itemKey='feedback'
-        onRenderItemLink={this.getTooltipDisplay}
-        ariaLabel={translateMessage('Feedback')}
-        title={translateMessage('Feedback')}
-        headerText={translateMessage('Feedback')}
-      >
       </PivotItem>
     ];
 
@@ -121,6 +111,19 @@ export class Request extends Component<IRequestComponent, any> {
         </PivotItem>,
       );
     }
+
+    pivotItems.push(
+      <PivotItem
+        key='feedback'
+        itemIcon='HeartFill'
+        itemKey='feedback'
+        onRenderItemLink={this.getTooltipDisplay}
+        ariaLabel={translateMessage('Feedback')}
+        title={translateMessage('Feedback')}
+        headerText={translateMessage('Feedback')}
+      >
+      </PivotItem>
+    )
     return pivotItems;
   }
 
