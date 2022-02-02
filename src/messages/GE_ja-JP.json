@@ -421,7 +421,7 @@
   "Show methods": "メソッドを表示する",
   "Set Query": "クエリの設定",
   "Query parameters": "クエリ パラメーター",
-  "Preview collection": "プレビュー コレクション",
+  "Preview postman collection": "プレビュー コレクション",
   "Download postman collection": "Postman コレクションをダウンロード",
   "Export list as a Postman collection message": "リスト全体を Postman コレクションとしてエクスポートできます。リストに不要なアイテムがある場合は、それらを選択して削除します",
   "Copied": "コピー済み",

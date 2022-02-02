@@ -421,7 +421,7 @@
   "Show methods": "Afficher des méthodes",
   "Set Query": "Définir une requête",
   "Query parameters": "Paramètres de requête",
-  "Preview collection": "Afficher un aperçu de la collection",
+  "Preview postman collection": "Afficher un aperçu de la collection",
   "Download postman collection": "Télécharger la collection Postman",
   "Export list as a Postman collection message": "Vous pouvez exporter la liste entière en tant que collection Postman. S’il y a des éléments dans la liste que vous ne souhaitez pas, sélectionnez-les pour les supprimer.",
   "Copied": "Copié",

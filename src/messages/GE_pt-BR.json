@@ -421,7 +421,7 @@
   "Show methods": "Mostrar métodos",
   "Set Query": "Definir a consulta",
   "Query parameters": "Parâmetros de consulta",
-  "Preview collection": "Visualizar a coleção",
+  "Preview postman collection": "Visualizar a coleção",
   "Download postman collection": "Baixar a coleção de carteiros",
   "Export list as a Postman collection message": "Você pode exportar a lista inteira como uma Coleção de carteiros. Se houver itens na lista que você não quer, selecione-os para removê-los",
   "Copied": "Copiado",

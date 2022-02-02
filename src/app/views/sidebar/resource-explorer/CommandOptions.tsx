@@ -17,7 +17,7 @@ const CommandOptions = (props: ICommandOptions) => {
   const options: ICommandBarItemProps[] = [
     {
       key: 'preview',
-      text: translateMessage('Preview collection'),
+      text: translateMessage('Preview postman collection'),
       iconProps: { iconName: 'View' },
       onClick: () => toggleSelectedResourcesPreview()
     }

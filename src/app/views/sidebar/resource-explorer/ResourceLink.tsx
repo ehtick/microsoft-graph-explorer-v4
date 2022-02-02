@@ -96,10 +96,10 @@ const ResourceLink = (props: IResourceLinkProps) => {
 
       menuItems.push(
         {
-          key: ResourceOptions.ADD_TO_COLLECTION,
-          text: translateMessage('Add to collection'),
+          key: ResourceOptions.ADD_TO_POSTMAN_COLLECTION,
+          text: translateMessage('Add to Postman collection'),
           itemType: ContextualMenuItemType.Normal,
-          onClick: () => props.resourceOptionSelected(ResourceOptions.ADD_TO_COLLECTION, resourceLink)
+          onClick: () => props.resourceOptionSelected(ResourceOptions.ADD_TO_POSTMAN_COLLECTION, resourceLink)
         });
     }
     return menuItems;

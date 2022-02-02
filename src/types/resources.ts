@@ -36,5 +36,5 @@ export enum ResourceLinkType {
 }
 
 export enum ResourceOptions {
-  ADD_TO_COLLECTION = 'add-to-collection'
+  ADD_TO_POSTMAN_COLLECTION = 'add-to-postman-collection'
 }

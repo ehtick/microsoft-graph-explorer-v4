@@ -15,15 +15,15 @@ export const VIEW_ALL_PERMISSIONS_BUTTON = 'View all permissions button';
 export const EXPORT_HISTORY_ITEM_BUTTON = 'Export history item button';
 export const DELETE_HISTORY_ITEM_BUTTON = 'Delete history item button';
 export const RESPONSE_HEADERS_COPY_BUTTON = 'Response headers copy button';
-export const DOWNLOAD_POSTMAN_COLLECTION_BUTTON = 'Download postman collection button';
-export const REMOVE_RESOURCE_FROM_COLLECTION_BUTTON = 'Remove resource from collection button';
+export const DOWNLOAD_POSTMAN_COLLECTION_BUTTON = 'Download Postman collection button';
+export const REMOVE_RESOURCE_FROM_POSTMAN_COLLECTION_BUTTON = 'Remove resource from Postman collection button';
 
 // List items
 export const HISTORY_LIST_ITEM = 'History list item';
 export const RESOURCES_LIST_ITEM = 'Resources list item';
 export const SAMPLE_QUERY_LIST_ITEM = 'Sample query list item';
 export const RESOURCES_ISOLATE_QUERY_LIST_ITEM = 'Resources isolate query list item';
-export const ADD_RESOURCE_TO_COLLECTION_LIST_ITEM = 'Add resource to collection list item';
+export const ADD_RESOURCE_TO_POSTMAN_COLLECTION_LIST_ITEM = 'Add resource to Postman collection list item';
 
 // Tabs
 export const HISTORY_TAB = 'History tab';

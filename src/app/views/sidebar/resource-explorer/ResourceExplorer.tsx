@@ -76,7 +76,7 @@ const unstyledResourceExplorer = (props: any) => {
     return [];
   }
 
-  const addToCollection = (item: IResourceLink) => {
+  const addToPostmanCollection = (item: IResourceLink) => {
     dispatch(addResourcePaths(getResourcePaths(item, version)));
   }
 
@@ -150,8 +150,8 @@ const unstyledResourceExplorer = (props: any) => {
   }
 
   const resourceOptionSelected = (activity: string, context: any) => {
-    if (activity === ResourceOptions.ADD_TO_COLLECTION) {
-      addToCollection(context);
+    if (activity === ResourceOptions.ADD_TO_POSTMAN_COLLECTION) {
+      addToPostmanCollection(context);
     }
   }
 

@@ -64,14 +64,16 @@ const telemetryMiddleware =
       }
       case RESOURCEPATHS_ADD_SUCCESS: {
         telemetry.trackEvent(eventTypes.LISTITEM_CLICK_EVENT, {
-          ComponentName: componentNames.ADD_RESOURCE_TO_COLLECTION_LIST_ITEM,
+          ComponentName:
+            componentNames.ADD_RESOURCE_TO_POSTMAN_COLLECTION_LIST_ITEM,
           ResourcePath: action.response[0].url
         });
         break;
       }
       case RESOURCEPATHS_DELETE_SUCCESS: {
         telemetry.trackEvent(eventTypes.LISTITEM_CLICK_EVENT, {
-          ComponentName: componentNames.REMOVE_RESOURCE_FROM_COLLECTION_BUTTON,
+          ComponentName:
+            componentNames.REMOVE_RESOURCE_FROM_POSTMAN_COLLECTION_BUTTON,
           ResourceCount: action.response.length
         });
         break;
