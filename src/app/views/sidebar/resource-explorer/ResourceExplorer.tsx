@@ -93,18 +93,15 @@ const unstyledResourceExplorer = (props: any) => {
   }
 
   const changeSearchValue = (event: any, value?: string) => {
-    let filtered: any[] = [...data.children];
+    let filtered: IResource[] = [...data.children];
     setSearchText(value || '');
-    if (value) {
-      filtered = performSearch(value, filtered);
-    }
-    const dataSet = getResourcesSupportedByVersion({
+       const dataSet = getResourcesSupportedByVersion({
       children: filtered,
       labels: data.labels,
       segment: data.segment
     }, version).children;
     setResourceItems(dataSet);
-    setItems(createResourcesList(dataSet, version));
+    setItems(createResourcesList(dataSet, version, searchText));
   }
 
   const navigateToBreadCrumb = (ev?: any, item?: IBreadcrumbItem): void => {

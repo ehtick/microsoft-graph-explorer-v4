@@ -7,7 +7,10 @@ import {
   ResourceLinkType
 } from '../../../../types/resources';
 
-import { getScreenResolution, textOverflowWidthRange } from '../../common/screen-resolution/screen-resolution';
+import {
+  getScreenResolution,
+  textOverflowWidthRange
+} from '../../common/screen-resolution/screen-resolution';
 interface ITreeFilter {
   paths: string[];
   level: number;
@@ -29,7 +32,8 @@ interface IOverflowProps {
 
 export function createResourcesList(
   source: IResource[],
-  version: string
+  version: string,
+  searchTerm?: string
 ): INavLinkGroup[] {
   function getLinkType({ segment, links }: any): ResourceLinkType {
     const isGraphFunction = segment.startsWith('microsoft.graph');
@@ -86,6 +90,27 @@ export function createResourcesList(
     }
     return 0;
   }
+  
+  function searchResourceLinks(needle: string, haystack: IResourceLink[]) {
+    const foundLinks: IResourceLink[] = [];
+    needle = needle.toLocaleLowerCase();
+    haystack.forEach((link) => {
+      const name = removeCounter(link.name).toLocaleLowerCase();
+      if (name.includes(needle)) {
+        foundLinks.push(link);
+        return;
+      }
+      if (link.links) {
+        const foundChildLinks = searchResourceLinks(needle, link.links);
+        if (foundChildLinks.length > 0) {
+          link.isExpanded = true;
+          link.links = foundChildLinks;
+          foundLinks.push(link);
+        }
+      }
+    });
+    return foundLinks;   
+  }
 
   function createNavLink(
     info: IResource,
@@ -104,7 +129,7 @@ export function createResourcesList(
       paths,
       availableMethods
     ).sort(sortResourceLinks); // show graph functions at the top
-
+    
     // if segment has one method only and no children, do not make segment a node
     if (availableMethods.length === 1 && versionedChildren.length === 0) {
       paths = [...paths, segment];
@@ -131,7 +156,7 @@ export function createResourcesList(
     };
   }
 
-  const navLink = createNavLink(
+  let navLink = createNavLink(
     {
       segment: '/',
       labels: [],
@@ -142,7 +167,7 @@ export function createResourcesList(
 
   return [
     {
-      links: navLink.links
+      links: searchTerm ? searchResourceLinks(searchTerm, navLink.links) : navLink.links
     }
   ];
 }
@@ -244,7 +269,7 @@ function flatten(content: IResourceLink[]): IResourceLink[] {
 }
 
 export function getOverflowWidthRange(resolution: string): IOverflowWidthRange {
-  const overFlowRange = textOverflowWidthRange.find(k => k.key === resolution);
+  const overFlowRange = textOverflowWidthRange.find((k) => k.key === resolution);
   if (!overFlowRange) {
     return {
       minimumOverflowWidth: 1000,
